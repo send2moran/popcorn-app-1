@@ -1,4 +1,4 @@
-#Popcorn time [![Dependency Status](https://david-dm.org/yify/popcorn-app.png?theme=shields.io)](https://david-dm.org/yify/popcorn-app)
+#Popcorn time [![Dependency Status](https://david-dm.org/popcorn-team/popcorn-app.svg?theme=shields.io)](https://david-dm.org/popcorn-team/popcorn-app)
 
 ## Idea
 
@@ -71,13 +71,16 @@ You can also build for all platforms with:
 
 First, building, testing and reporting bug is highly appreciated. Please include console's output and reproduction step in your bug report.
 If you want to develop, you can look at the issues, especialy the bug and fix them.
+Here's a [list of feature](https://github.com/popcorn-team/popcorn-app/wiki/Feature-Proposal) requested by the community so far.
 
-Join us on IRC at #popcorntime on freenode, most active developpers hang in there.
+Please follow the [contributions guidelines](https://github.com/popcorn-team/popcorn-app/wiki/Contribution-Guidelines).
+
+Join us on IRC at `#popcorntime` on freenode ([web access](http://webchat.freenode.net/?channels=popcorntime)), most active developpers hang in there.
 
 ## Any problem?
 
 ### Error about missing libudev.so.0
-Search for libudev.0 on your distribution. Most of the time it can be easily fixed by creating a symbolic link from libudev.so to libudev.so.0
+Search for libudev.so.0 on your distribution. Most of the time it can be easily fixed by creating a symbolic link from libudev.so to libudev.so.0
 
 ### Error "Gtk-WARNING **: cannot open display:"
 Try running `export DISPLAY=:0.0`
