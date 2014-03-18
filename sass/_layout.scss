@@ -184,6 +184,20 @@ a { text-decoration: none; }
           content: "\e00B";
       }
       &.fullscreen:hover{color:#b2b2b2;}
+
+      &.settings {
+        background: transparent;
+        background-image: url(../images/settings.png);
+        margin: 4px;
+        width: 24px;
+        height: 24px;
+        border-radius: 0;
+        display:block;
+
+        &:hover {
+          background-image: url(../images/settings_over.png);
+        }
+      }
     }
   }
 }

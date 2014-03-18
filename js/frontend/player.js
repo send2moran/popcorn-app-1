@@ -9,7 +9,7 @@ var playTorrent = window.playTorrent = function (torrent, subs, movieModel, call
   var tmpFolder = path.join(os.tmpDir(), 'Popcorn-Time')
   var tmpFilename = ( torrent.toLowerCase().split('/').pop().split('.torrent').shift() ).slice(0,100);
   tmpFilename = tmpFilename.replace(/([^a-zA-Z0-9-_])/g, '_') + '.mp4';
-  var tmpFile = path.join(tmpFolder, tmpFilename);
+  var tmpFile = path.join(App.settings.cacheLocation, tmpFilename);
 
   var numCores = (os.cpus().length > 0) ? os.cpus().length : 1;
   var numConnections = 100;
@@ -70,6 +70,9 @@ var playTorrent = window.playTorrent = function (torrent, subs, movieModel, call
 
         // Stop processes
         flix.clearCache();
+        if(App.settings.autoClearCache) {
+            flix.clearCache();
+        }
         flix.destroy();
         videoStreamer = null;
 

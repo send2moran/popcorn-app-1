@@ -21,6 +21,12 @@
 	"legalDisclaimerResponsible": "We are not responsible for any problems that may arise, so make sure you understand our Terms and Conditions before using the app.",
 	"legalDisclaimerAccept": "I understand",
 	"legalDisclaimerCancel": "Leave",
+	"Settings": "Settings",
+ 	"Cache": "Cache",
+ 	"Cache location": "Cache location",
+ 	"Browse...": "Browse...",
+ 	"Save": "Save",
+ 	"Auto clear cache": "Auto clear cache",
 	"genres": {
 		"all": "Popular",
 		"action": "Action",
