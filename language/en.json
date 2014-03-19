@@ -63,6 +63,10 @@
 	"bulgarian": "Bulgarian",
 	"finnish": "finnish",
 	"brazilian": "brazilian",
+<<<<<<< HEAD
 	"russian": "russian",
 	"hebrew": "hebrew"
+=======
+	"russian": "russian"
+>>>>>>> upstream/master
 }
