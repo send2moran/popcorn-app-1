@@ -2,7 +2,6 @@
 
 var videoStreamer = null;
 var playTorrent = window.playTorrent = function (torrent, subs, movieModel, callback, progressCallback) {
-
   videoStreamer ? $(document).trigger('videoExit') : null;
 
   // Create a unique file to cache the video (with a microtimestamp) to prevent read conflicts
@@ -10,7 +9,7 @@ var playTorrent = window.playTorrent = function (torrent, subs, movieModel, call
   var tmpFilename = ( torrent.toLowerCase().split('/').pop().split('.torrent').shift() ).slice(0,100);
   tmpFilename = tmpFilename.replace(/([^a-zA-Z0-9-_])/g, '_') + '.mp4';
   var tmpFile = path.join(App.settings.cacheLocation, tmpFilename);
-
+  var defualtSubtitle = App.settings.defualtSubtitle.toLowerCase();
   var numCores = (os.cpus().length > 0) ? os.cpus().length : 1;
   var numConnections = 100;
 
@@ -170,6 +169,15 @@ window.spawnVideoPlayer = function (url, subs, movieModel) {
 
     // Init video.
     var video = window.videoPlaying = videojs('video_player', { plugins: { biggerSubtitle : {}, smallerSubtitle : {}, customSubtitles: {} }});
+
+    if(App.settings.defualtSubtitle.toLowerCase() !== "none"){
+      for(var index in subArray ) {
+        if(typeof SubtitleLanguages[lang] === 'undefined'){ continue; }
+        if(subArray[index].language.toLowerCase()  === App.settings.defualtSubtitle.toLowerCase())
+        videoPlaying.showTextTrack(videoPlaying.textTracks()[index].id_);
+      }
+    }
+
 
     if(movieModel.has('resumetime')) {
       video.currentTime(movieModel.get('resumetime'));

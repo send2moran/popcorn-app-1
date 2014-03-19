@@ -14,7 +14,8 @@ App.View.Settings = Backbone.View.extend({
         'click #settings-cacheLocation-browse': 'browseLocation',
         'click #settings-cacheLocation-value': 'browseLocation',
         'change #settings-cacheLocation-input': 'locationChanged',
-        'change input':             'makeDirty'
+        'change input':             'makeDirty',
+        'change select':             'makeDirty'
     },
 
     getSettingsValue: function () {
@@ -30,13 +31,15 @@ App.View.Settings = Backbone.View.extend({
             data[input.attr('name')] = input.val();
         });
 
+        var selected_subtitle = this.$el.find("#default_subtitle_select");
+        data[selected_subtitle.attr('name')] = selected_subtitle.val();
+
         this.$el.find('input[not_empty]').each(function(i, input) {
             input = $(input);
             if(_.isEmpty(input.val())) {
                 delete data[input.attr('name')];
             }
         });
-
         return data;
     },
 
@@ -62,6 +65,7 @@ App.View.Settings = Backbone.View.extend({
     },
 
     show: function () {
+        App.settings.subtitles = App.Providers.subtitle.getAll();
         $('body').removeClass().addClass('sidebar-open');
         this.$el.removeClass('hidden');
         this.render();

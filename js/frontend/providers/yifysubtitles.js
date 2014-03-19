@@ -113,6 +113,9 @@ var YifyProvider = {
             model.set('subtitles', subtitles);
             model.set('hasSubtitle', true);
         });
+    },
+    getAll : function(){
+        return Languages;
     }
 };
 

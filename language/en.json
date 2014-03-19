@@ -22,11 +22,12 @@
 	"legalDisclaimerAccept": "I understand",
 	"legalDisclaimerCancel": "Leave",
 	"Settings": "Settings",
- 	"Cache": "Cache",
- 	"Cache location": "Cache location",
- 	"Browse...": "Browse...",
- 	"Save": "Save",
- 	"Auto clear cache": "Auto clear cache",
+	"Cache": "Cache",
+	"Cache location": "Cache location",
+	"Browse...": "Browse...",
+	"Save": "Save",
+	"Auto clear cache": "Auto clear cache",
+	"DefaultSubtitle":"Select default subtitle",
 	"genres": {
 		"all": "Popular",
 		"action": "Action",
@@ -68,5 +69,10 @@
 	"hungarian": "Hungarian",
 	"bulgarian": "Bulgarian",
 	"finnish": "finnish",
-	"brazilian": "brazilian"
+	"brazilian": "brazilian",
+	"Default_Subtitle": "Default_Subtitle",
+	"german": "german",
+	"russian": "russian",
+	"ukrainian": "ukrainian",
+	"latvian": "latvian"
 }
